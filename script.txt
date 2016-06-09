@@ -1,0 +1,50 @@
+[test_discovery.py]
+py.test -v test_discovery.py
+
+[test_setup_teardown.py]
+py.test -v -s test_setup_teardown.py
+
+[test_asserts.py]
+py.test -v test_asserts.py
+
+[test_parameters.py]
+py.test -v test_parameters.py
+
+[test_fixtures.py]
+py.test -v test_fixtures.py
+
+[test_fixture_sharing.py]
+py.test -v test_fixture_sharing.py
+
+[test_fixture_teardown.py]
+py.test -v -s test_fixture_teardown.py
+
+[test_markers.py]
+py.test -v test_markers.py
+py.test -v -m 'slow' test_markers.py
+py.test -v -m 'not slow' test_markers.py
+py.test -v -m 'not slow and not online' test_markers.py
+py.test -v -m 'online or postgres' test_markers.py
+
+[test_selection.py]
+py.test -v -m 'marked' test_selection.py
+py.test -v -m 'not marked' test_selection.py
+py.test -v test_selection.py::test_pants
+py.test -v test_selection.py::TestThings
+py.test -v test_selection.py::TestThings::test_method1
+py.test -v -k pants test_selection.py
+py.test -v -k 'pants or method' test_selection.py
+py.test -v -k 'not pants' test_selection.py
+
+[test_debugging.py]
+py.test -v test_debugging.py
+py.test -v --pdb test_debugging.py
+
+[test_monkeypatch.py]
+py.test -v test_monkeypatch.py
+
+[test_tmpdir.py]
+py.test -v -s test_tmpdir.py
+
+[test_capsys.py]
+py.test -v test_capsys.py

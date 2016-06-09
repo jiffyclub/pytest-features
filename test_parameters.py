@@ -18,6 +18,11 @@ import os.path
 import pytest
 
 
+@pytest.mark.parametrize('input', [1, 2, 'a', 3])
+def test_input(input):
+    assert isinstance(input, int)
+
+
 @pytest.mark.parametrize('test_file', glob.glob('*.py'))
 def test_file_exists(test_file):
     assert os.path.exists(test_file)
